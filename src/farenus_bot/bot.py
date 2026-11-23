@@ -1,10 +1,11 @@
 import discord
+import discord.ext.commands
 
 intents = discord.Intents.default()
 
-client = discord.Client(intents=intents)
+bot = discord.ext.commands.Bot(command_prefix="!", intents=intents)
 
 
-@client.event
+@bot.event
 async def on_ready():
-    print(f"zalogowano jako {client.user}")
+    print(f"zalogowano jako {bot.user}")

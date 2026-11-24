@@ -10,12 +10,8 @@ class Bot(discord.ext.commands.Bot):
         super().__init__(command_prefix="!", intents=intents)
 
     async def setup_hook(self):
+        await self.load_extension("farenus_bot.cogs.ping")
         guild = discord.Object(id=int(config.DEV_GUILD_ID))
-
-        @self.tree.command(name="ping", description="sprawdź, czy bot odpowiada")
-        async def ping_command(interaction):
-            await interaction.response.send_message("pong")
-
         self.tree.copy_global_to(guild=guild)
         await self.tree.sync(guild=guild)
 

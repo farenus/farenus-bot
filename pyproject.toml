@@ -12,7 +12,10 @@ requires-python = ">=3.14"
 classifiers = [
     "Private :: Do Not Upload",
 ]
-dependencies = []
+dependencies = [
+    "discord-py>=2.7.1",
+    "python-dotenv>=1.2.4",
+]
 
 [build-system]
 requires = ["uv_build>=0.13.9,<0.14.0"]

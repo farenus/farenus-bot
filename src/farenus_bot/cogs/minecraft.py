@@ -15,7 +15,7 @@ class Minecraft(discord.ext.commands.Cog):
     )
     @discord.app_commands.describe(player="wprowadź nick gracza")
     async def wl_command(self, interaction: discord.Interaction, player: str):
-        await interaction.response.defer()
+        await interaction.response.defer(ephemeral=True)
         try:
             response = await self.bot.api.post(
                 "/minecraft/whitelist/add", json={"player": player}

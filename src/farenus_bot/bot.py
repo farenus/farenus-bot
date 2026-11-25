@@ -17,6 +17,7 @@ class Bot(discord.ext.commands.Bot):
             timeout=10,
         )
         await self.load_extension("farenus_bot.cogs.ping")
+        await self.load_extension("farenus_bot.cogs.minecraft")
         guild = discord.Object(id=int(config.DEV_GUILD_ID))
         self.tree.copy_global_to(guild=guild)
         await self.tree.sync(guild=guild)
